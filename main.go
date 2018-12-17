@@ -4,12 +4,12 @@ import (
 	"os"
 	"path"
 
-	"github.com/hirakiuc/cloud-pubsub-worker-go/common"
+	"github.com/hirakiuc/jobworker-go/common"
 	"go.uber.org/zap"
 
 	"github.com/urfave/cli"
 
-	_ "github.com/hirakiuc/cloud-pubsub-worker-go/commands"
+	_ "github.com/hirakiuc/jobworker-go/commands"
 )
 
 func main() {

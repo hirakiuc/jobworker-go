@@ -10,7 +10,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/hirakiuc/cloud-pubsub-worker-go/jobs"
+	"github.com/hirakiuc/jobworker-go/jobs"
 )
 
 // JobRequest describe a request instance to be processed by worker.

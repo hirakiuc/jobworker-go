@@ -3,7 +3,7 @@ package jobs
 import (
 	"context"
 
-	"github.com/hirakiuc/cloud-pubsub-worker-go/models"
+	"github.com/hirakiuc/jobworker-go/models"
 )
 
 // BaseJob describe a basic job.

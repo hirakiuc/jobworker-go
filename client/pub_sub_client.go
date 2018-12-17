@@ -1,7 +1,7 @@
 package client
 
 import (
-	"github.com/hirakiuc/cloud-pubsub-worker-go/models"
+	"github.com/hirakiuc/jobworker-go/models"
 )
 
 // PubSubClient describe a CloudPubSub client to fetch messages.

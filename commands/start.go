@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/hirakiuc/cloud-pubsub-worker-go/common"
-	"github.com/hirakiuc/cloud-pubsub-worker-go/dispatcher"
+	"github.com/hirakiuc/jobworker-go/common"
+	"github.com/hirakiuc/jobworker-go/dispatcher"
 	"github.com/urfave/cli"
 )
 

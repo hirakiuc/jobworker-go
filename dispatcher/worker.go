@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/hirakiuc/cloud-pubsub-worker-go/common"
+	"github.com/hirakiuc/jobworker-go/common"
 	"go.uber.org/zap"
 )
 

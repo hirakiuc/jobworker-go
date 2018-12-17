@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/hirakiuc/cloud-pubsub-worker-go/jobs"
-	"github.com/hirakiuc/cloud-pubsub-worker-go/models"
+	"github.com/hirakiuc/jobworker-go/jobs"
+	"github.com/hirakiuc/jobworker-go/models"
 )
 
 // JobRepository describe a repository to use Job models.

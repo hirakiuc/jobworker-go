@@ -5,9 +5,9 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/hirakiuc/cloud-pubsub-worker-go/client"
-	"github.com/hirakiuc/cloud-pubsub-worker-go/common"
-	"github.com/hirakiuc/cloud-pubsub-worker-go/repository"
+	"github.com/hirakiuc/jobworker-go/client"
+	"github.com/hirakiuc/jobworker-go/common"
+	"github.com/hirakiuc/jobworker-go/repository"
 	"go.uber.org/zap"
 )
 
