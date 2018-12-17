@@ -35,7 +35,15 @@ func NewWorker(reqChan chan JobRequest) *Worker {
 
 // Start starts the worker process.
 func (w *Worker) Start() {
-	go w.run()
+	go func() {
+		err := w.run()
+		if err != nil {
+			logger := w.getLogger()
+			logger.Error("Worker Failed",
+				zap.Error(err),
+			)
+		}
+	}()
 }
 
 func (w *Worker) getLogger() *zap.Logger {
