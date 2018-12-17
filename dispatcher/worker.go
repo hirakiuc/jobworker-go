@@ -11,7 +11,7 @@ import (
 
 // Worker describe a job processor.
 type Worker struct {
-	id uuid.UUID
+	ID uuid.UUID
 
 	// reqChan is NOT owned by Worker, this is used to receive job.
 	reqChan chan JobRequest
@@ -26,7 +26,7 @@ type Worker struct {
 // NewWorker return the worker instance for the Job.
 func NewWorker(reqChan chan JobRequest) *Worker {
 	return &Worker{
-		id:            uuid.New(),
+		ID:            uuid.New(),
 		reqChan:       reqChan,
 		terminateChan: make(chan struct{}),
 		closedChan:    make(chan struct{}),
@@ -49,7 +49,7 @@ func (w *Worker) Start() {
 func (w *Worker) getLogger() *zap.Logger {
 	logger := common.GetLogger()
 	return logger.With(
-		zap.String("WorkerID", w.id.String()),
+		zap.String("WorkerID", w.ID.String()),
 	)
 }
 
