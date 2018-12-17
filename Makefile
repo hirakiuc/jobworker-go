@@ -12,6 +12,6 @@ clean:
 
 .PHONY: build
 build: clean
-	go build -o $(OUTPUT)
+	CGO_ENABLED=0 go build -o $(OUTPUT)
 
 default: build
