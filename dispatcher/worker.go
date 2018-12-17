@@ -4,12 +4,15 @@ import (
 	"context"
 	"errors"
 
+	"github.com/google/uuid"
 	"github.com/hirakiuc/jobworker-go/common"
 	"go.uber.org/zap"
 )
 
 // Worker describe a job processor.
 type Worker struct {
+	id uuid.UUID
+
 	// reqChan is NOT owned by Worker, this is used to receive job.
 	reqChan chan JobRequest
 
@@ -23,6 +26,7 @@ type Worker struct {
 // NewWorker return the worker instance for the Job.
 func NewWorker(reqChan chan JobRequest) *Worker {
 	return &Worker{
+		id:            uuid.New(),
 		reqChan:       reqChan,
 		terminateChan: make(chan struct{}),
 		closedChan:    make(chan struct{}),
@@ -34,8 +38,15 @@ func (w *Worker) Start() {
 	go w.run()
 }
 
-func (w *Worker) run() error {
+func (w *Worker) getLogger() *zap.Logger {
 	logger := common.GetLogger()
+	return logger.With(
+		zap.String("WorkerID", w.id.String()),
+	)
+}
+
+func (w *Worker) run() error {
+	logger := w.getLogger()
 
 	for {
 		logger.Info("Worker Loop Start")
