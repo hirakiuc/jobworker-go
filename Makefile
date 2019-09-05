@@ -15,7 +15,7 @@ check:
 
 .PHONY: build
 build: clean
-	CGO_ENABLED=0 go build -o $(OUTPUT)
+	CGO_ENABLED=0 go build -o $(OUTPUT) ./cmd/jobdaemon/main.go
 
 .PHONY: imagebuild
 imagebuild:
